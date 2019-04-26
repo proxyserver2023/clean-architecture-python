@@ -33,3 +33,16 @@ def test_add_two_numbers():
     c = calc.Calc()
     res = c.add(4, 5)
     assert res == 9
+
+
+def test_add_three_numbers():
+    """Add Three Numbers
+    """
+    assert calc.Calc().add(10, 20, 30) == 60
+
+def test_add_arguments_are_int():
+    """Add Method Arguments should be int
+    even if someone passes string throw TypeError
+    """
+    with pytest.raises(TypeError):
+        calc.Calc().add(10, '20', '30')
