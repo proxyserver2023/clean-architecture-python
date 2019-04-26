@@ -39,6 +39,17 @@ The clean architecture is the opposite of spaghetti code, where everything is in
 2. Add the reasonably amount of code you need to pass the tests
 3. You Shouldn't have more than one failing test
 4. Write code that passes the test and refactor it
+5. A test should fail the first time you run it. If it doesn’t, ask yourself why you are adding it.
+6. Never refactor w/o tests.
+
+#### How many assertions
+
+If the test is a logical `AND` between conditions - then go for multiple assertions.
+Or a logical `OR` - Multiple Test functions.
+
+#### How to Fix Bugs
+
+From the TDD point of view, if you don’t have a failing test there is no bug, so you have to come up with at least one test that exposes the issue you are trying to solve.
 
 ## Getting Started
 
