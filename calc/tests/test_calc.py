@@ -46,3 +46,7 @@ def test_add_arguments_are_int():
     """
     with pytest.raises(TypeError):
         calc.Calc().add(10, '20', '30')
+
+def test_add_any_number_of_arguments():
+    args = range(100)
+    assert calc.Calc().add(*args) == 4950
