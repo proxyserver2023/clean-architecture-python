@@ -27,6 +27,12 @@ def test_content(response):
     # from bs4 import BeautifulSoup
     # assert 'GitHub' in BeautifulSoup(response.content).title.string
 
+
+
+"""Addition Tests
+"""
+
+
 def test_add_two_numbers():
     """Adds Two Numbers
     """
@@ -40,6 +46,7 @@ def test_add_three_numbers():
     """
     assert calc.Calc().add(10, 20, 30) == 60
 
+
 def test_add_arguments_are_int():
     """Add Method Arguments should be int
     even if someone passes string throw TypeError
@@ -47,6 +54,20 @@ def test_add_arguments_are_int():
     with pytest.raises(TypeError):
         calc.Calc().add(10, '20', '30')
 
+
 def test_add_any_number_of_arguments():
     args = range(100)
     assert calc.Calc().add(*args) == 4950
+
+
+"""Subtraction Tests
+"""
+
+
+def test_subtraction():
+    assert calc.Calc().sub(10, 5) == 5
+
+
+def test_subtraction_args_are_int_if_not_raise_typeerror():
+    with pytest.raises(TypeError):
+        calc.Calc().sub('10', 5)
