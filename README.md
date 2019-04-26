@@ -79,15 +79,16 @@ source ~/.zshrc
 Create a virtualenv
 
 ```bash
-mkvirtualenv awesome-python
-workon awesome-python
+export PROJECT_NAME='clean-architecture-python'
+mkvirtualenv $PROJECT_NAME
+workon $PROJECT_NAME
 ```
 
 Clone the Repo
 
 ```bash
-git clone https://github.com/AlaminMahamud/awesome-python
-cd awesome-python
+git clone https://github.com/alamin-mahamud/clean-architecture-python $PROJECT_NAME
+cd $PROJECT_NAME
 ```
 
 Install the requirements
