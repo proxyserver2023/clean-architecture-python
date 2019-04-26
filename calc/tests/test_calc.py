@@ -79,3 +79,14 @@ def test_subtraction_args_are_int_if_not_raise_typeerror():
 
 def test_multiplication():
     assert calc.Calc().mul(*(range(1, 100))) == 933262154439441526816992388562667004907159682643816214685929638952175999932299156089414639761565182862536979208272237582511852109168640000000000000000000000
+
+
+"""Division Tests
+"""
+
+def test_division():
+    assert abs(calc.Calc().div(10, 3) - 3.333333) <= 0.001
+
+def test_division_with_zero_raises_exception():
+    with pytest.raises(ZeroDivisionError):
+        calc.Calc().div(10, 0)
