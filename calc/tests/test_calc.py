@@ -71,3 +71,11 @@ def test_subtraction():
 def test_subtraction_args_are_int_if_not_raise_typeerror():
     with pytest.raises(TypeError):
         calc.Calc().sub('10', 5)
+
+
+"""Multiplication Tests
+"""
+
+
+def test_multiplication():
+    assert calc.Calc().mul(*(range(1, 100))) == 933262154439441526816992388562667004907159682643816214685929638952175999932299156089414639761565182862536979208272237582511852109168640000000000000000000000
