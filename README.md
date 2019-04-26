@@ -37,7 +37,8 @@ The clean architecture is the opposite of spaghetti code, where everything is in
 
 1. Write Tests First, Code Letter
 2. Add the reasonably amount of code you need to pass the tests
-3. You Shouldn't have more than one failing test.
+3. You Shouldn't have more than one failing test
+4. Write code that passes the test and refactor it
 
 ## Getting Started
 
