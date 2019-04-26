@@ -4,6 +4,7 @@
 
 - [Software Architecture](#software-architecture)
   - [Analogy](#analogy)
+- [Clean Architecture](#clean-architecture)
 
 ### Software Architecture
 
@@ -25,4 +26,109 @@ Let's consider a Shop. First we will start from higher level (top-level), we wil
 
 - **More Zoom In** - Even in the case of a shop that has positive results we might want to increase its performances, and to do this chances are that we need to understand its internal structure and what we can change to increase its productivity. This may reveal, for example, that the shop has too many workers, that are underemployed waiting for clients because we overestimated the size of the business. Or it might show that the time taken to serve is too long and many clients walk away without buying anything. Or maybe there are not enough shelves to display goods and the staff carries stock around all day searching for display space so the shop is in chaos and clients cannot find what they need.
 
-At this level, however, workers are pure entities, and still we don’t know much about the shop. To better understand the reasons behind a problem we might need to increase the zoom level and look at the workers for what they are, human beings, and start understanding what their needs are and how to help them work better.
+  At this level, however, workers are pure entities, and still we don’t know much about the shop. To better understand the reasons behind a problem we might need to increase the zoom level and look at the workers for what they are, human beings, and start understanding what their needs are and how to help them work better.
+
+### Clean Architecture
+
+The clean architecture is the opposite of spaghetti code, where everything is interlaced and there are no single elements that can be easily detached from the rest and replaced without the whole system collapsing. The main point of the clean architecture is to make clear “what is where and why”, and this should be your first concern while you design and implement a software system, whatever architecture or development methodology you want to follow.
+
+## Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+
+### Prerequisites
+
+- python3
+- pip3
+- virtualenvwrapper
+
+Install `python3`
+
+```bash
+sudo apt-get install -y python3
+```
+
+Install `pip3`
+
+```bash
+sudo apt-get install -y python3-pip
+```
+
+Install `virtualenvwrapper`
+
+```bash
+sudo pip3 install vitualenvwrapper
+```
+
+On your `.zshrc` or `.bashrc`
+
+```bash
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/projects
+source /usr/local/bin/virtualenvwrapper.sh
+```
+
+```bash
+source ~/.bashrc
+#or
+source ~/.zshrc
+```
+
+### Installing
+
+Create a virtualenv
+
+```bash
+mkvirtualenv awesome-python
+workon awesome-python
+```
+
+Clone the Repo
+
+```bash
+git clone https://github.com/AlaminMahamud/awesome-python
+cd awesome-python
+```
+
+Install the requirements
+
+```bash
+pip install -r requirements.txt
+```
+
+## Running the tests
+
+```bash
+pytest -ra
+```
+
+## Deployment
+
+Additional notes about how to deploy this on a live system
+
+## Built With
+
+- [pytest](https://docs.pytest.org/en/latest/index.html) - used for tests
+
+## Contributing
+
+Please read [CONTRIBUTING.md](./CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+
+## Versioning
+
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
+
+## Authors
+
+- **Alamin Mahamud** - _Initial work_ - [alamin-mahamud](https://github.com/alamin-mahamud)
+- **Leonardo Giordani** - _Clean Architecture Python_ - [The Digital Cat](http://thedigitalcatonline.com/)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Acknowledgments
+
+- Hat tip to anyone whose code was used
+- Inspiration
+- etc
