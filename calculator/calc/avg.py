@@ -1,14 +1,19 @@
 import urllib.request
 import json
-import calc
+from calc import calc
 
-URL = ("https://data.nasa.gov/resource/y77d-th95.json")
 
-with urllib.request.urlopen(URL) as url:
-    data = json.loads(url.read().decode())
+class MeteoriteStats:
+    def get_data(self):
+        URL = ("https://data.nasa.gov/resource/y77d-th95.json")
 
-masses = [float(d['mass']) for d in data if 'mass' in d]
-print(masses)
+        with urllib.request.urlopen(URL) as url:
+            data = json.loads(url.read().decode())
+        return data
 
-avg_mass = calc.Calc().avg(masses)
-print(avg_mass)
+    def average_mass(self, data):
+        masses = [float(d['mass']) for d in data if 'mass' in d]
+        print(masses)
+
+        avg_mass = calc.Calc().avg(*masses)
+        return avg_mass
