@@ -5,6 +5,8 @@
 - [Software Architecture](#software-architecture)
   - [Analogy](#analogy)
 - [Clean Architecture](#clean-architecture)
+  - [Layers and Data Flow](#layers-and-data-flow)
+  - [Main Layers](#main-layers)
 - [Test Driven Development](#test-driven-development)
 
 ### Software Architecture
@@ -32,6 +34,45 @@ Let's consider a Shop. First we will start from higher level (top-level), we wil
 ### Clean Architecture
 
 The clean architecture is the opposite of spaghetti code, where everything is interlaced and there are no single elements that can be easily detached from the rest and replaced without the whole system collapsing. The main point of the clean architecture is to make clear “what is where and why”, and this should be your first concern while you design and implement a software system, whatever architecture or development methodology you want to follow.
+
+#### Layers and Data Flow
+
+- the communications between elements that live in the samme layer is unrestricted.
+- when you want to communciate with other layers you have to foloow one simple roule.
+
+**THE RULE** - _Talk inwards with simple structures, talk outwards through interfaces_.
+
+Your elements should talk outwards using **interfaces**. using only the **expected API** of a component, w/o referring to a **speicific implementation**.
+
+When an **outer layer** is cretaed, elements living there will **plug themselves** into those **interfaces** and provide a **practical implementation**.
+
+#### Main Layers
+
+##### Entities
+
+Domain models, these models are different then framework models like django. these models are not connected with a storage system, so they cant be directly saved or queried using methods of their classes, they dont contain methods to dump as JSON strings, they are not connected with any presetnation layer, they are **lightweight models**.
+
+The architecture allows them to interact directly. This means that one of your python classes can use another one directly, instantiating it and calling it's methdos.
+
+Entitites dont know anything about outer layers like external interfaces, they only work with interfaces.
+
+#### use cases
+
+Use cases implemented by the system. use cases are the processes that happen ino your appication, where you use you domain models to work on real data. Examples can be a user logging in, a search with specific filters being performed, or a bank transaction happening when the user wants to buy the content of the cart.
+
+a use case should be as simple as it can. if we can isolate the system based on its use case then we can test, understand and maintain it more easily.
+
+Use cases know the entities, so they can instantitate them directly and use them. they can also call each other, and it is common to create complex use cases that put together other simpler ones.
+
+#### External systems
+
+External systems that implemetns the interfaces defined in the previous layer. example - a specific framework that exposes an HTTP API, or a specific database.
+
+### APIs and shades of grey
+
+Every layer must be accessed by api defined by inner layer. that is a fixed collection of entry points (methods and objects).
+
+**When desingning an architecture it is very imporatnt to know 'what is where and why', and is even more important when you 'bend' the rules.**
 
 ### Test Driven Development
 
